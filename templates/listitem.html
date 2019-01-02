@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+body { 
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #bbb;
+}
+
+.header {
+  overflow: hidden;
+  background-color: #000080;
+  padding: 20px 10px;
+}
+
+.header a {
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px; 
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+.header h1 {
+  font-size: 20px;
+  font-weight: bold;
+  float:left;
+  color:white;
+  padding-left: 75px
+}
+.column.right a
+{
+  color:#FF4500;
+  text-decoration: none;
+  font-size:20px;
+}
+.header a.logoutbutton {
+  background-color: #FF8C00;
+  color: white;
+  float:right;
+  margin-right: 50px;
+}
+
+.header-format {
+  float: right;
+}
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 50px;
+}
+.column.left {
+  width: 40%;
+}
+.column.right {
+  width: 60%;
+}
+.row
+{
+  margin: 50px;
+  background-color: white;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+h2
+{
+  font-size: 30px;
+  color:#000080;
+}
+p
+{
+  font-size: 20px;
+  color:#FF4500;
+}
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>Catalog App</h1>
+  <div class="header-format">
+    <a class="logoutbutton" href="http://localhost:5000/login">Logout</a>
+  </div>
+</div>
+<div class="row">
+  <div class="column left">
+    <h2>Categories</h2></br>
+      {% for i in range(0,allcategories|length) %}
+      <p>{{allcategories[i].name}}</p>
+       {% endfor %}
+  </div>
+  <div class="column right">
+    <h2>{{desiredcategory.name}} ({{categoryitems|length}} Items)</h2></br></br>
+    {% for i in range(0,categoryitems|length) %}
+  <a href='http://localhost:5000/categories/'>{{categoryitems[i].name}}</a></br></br>
+    {% endfor %}
+  </div>
+</div>
+</body>
+</html>

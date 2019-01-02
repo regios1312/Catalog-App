@@ -1,0 +1,8 @@
+<html>
+<script>function myFunction()
+{
+	alert('You are not allowed to edit or delete this item as you are not its creator.Please create your own item to edit it.'); 
+setTimeout(function() {window.location.href ='{{url_for('displayitem',category_name=mycategory.name, item_name=myitem.name)}}';},100)
+}</script>
+<body onload='myFunction()'>
+</html>

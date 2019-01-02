@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+body { 
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #bbb;
+}
+
+.header {
+  overflow: hidden;
+  background-color: #000080;
+  padding: 20px 10px;
+}
+
+.header a {
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px; 
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+.header h1 {
+  font-size: 20px;
+  font-weight: bold;
+  float:left;
+  color:white;
+  padding-left: 75px
+}
+.header a.Home {
+  background-color: #FF8C00;
+  color: white;
+  float:right;
+  margin-right: 50px;
+}
+
+.header-format {
+  float: right;
+}
+
+.EditItem
+{
+  margin: 30px;
+  background-color: white;
+}
+h2
+{
+  font-size: 30px;
+  color:black;
+  padding-left:50px;
+  padding-top: 50px;
+}
+p
+{
+  font-size: 20px;
+  color:black;
+  padding-left: 50px;
+}
+input
+{
+  margin-left:50px;
+  margin-top: 10px;
+}
+select
+{
+  margin-left: 50px;
+}
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>Catalog App</h1>
+  <div class="header-format">
+    <a class="Home" href="http://localhost:5000/catalog">Home</a>
+  </div>
+</div>
+<div class="EditItem">
+  <h2>Edit Item</h2>
+  <form action='{{url_for('EditItem',category_name=mycategory.name, item_name=myitem.name)}}' method="POST">
+  <p>Name</p>
+  <input type="text" name="name" value={{myitem.name}}>
+  <br>
+  <p>Price</p>
+  <input type="text" name="price" value={{myitem.price}}>
+  <br>
+  <p>Description</p>
+  <textarea name="description" rows="5" cols="30" style="margin-left: 50px;margin-top: 10px;">
+  {{myitem.description}}
+  </textarea>
+  <br>
+  <p>Category</p>
+  <select name="category">
+  {% for i in range(0,categoryall|length) %}
+  <option value={{categoryall[i].name}}>{{categoryall[i].name}}</option>
+  {% endfor %}
+  </select></br>
+  <input type="submit" value="Submit" style="margin-bottom: 20px;"><br>
+  </form>
+</div>
+</body>
+</html>

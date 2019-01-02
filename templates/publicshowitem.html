@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+body { 
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #bbb;
+}
+
+.header {
+  overflow: hidden;
+  background-color: #000080;
+  padding: 20px 10px;
+}
+
+.header a {
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px; 
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+.header h1 {
+  font-size: 20px;
+  font-weight: bold;
+  float:left;
+  color:white;
+  padding-left: 75px
+}
+.header a.Home {
+  background-color: #FF8C00;
+  color: white;
+  float:right;
+  margin-right: 50px;
+}
+
+.header-format {
+  float: right;
+}
+.ItemDetails a
+{
+  color: #000080;
+  font-size: 20px;
+  padding:20px;
+}
+.ItemDetails
+{
+  margin: 50px;
+  background-color: white;
+}
+h2
+{
+  font-size: 30px;
+  color:black;
+  padding:20px;
+}
+p
+{
+  font-size: 20px;
+  color:black;
+  padding-left: 20px;
+}
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>Catalog App</h1>
+  <div class="header-format">
+    <a class="Home" href="http://localhost:5000/catalog">Home</a>
+  </div>
+</div>
+<div class="ItemDetails">
+  <h2>{{myitem.name}}</h2>
+  <p>Price: {{myitem.price}}</p>
+  <p>Description: {{myitem.description}}</p></br>
+</div>
+</body>
+</html>
