@@ -1,3 +1,5 @@
+#The client_secrets OAuth file has been deleted from repository.Create your own OAuth file by the same name for google-signin. 
+
 #This file describes how to navigate and run the application
 
 1.Go in your /fullstack-nanodegree-vm/vagrant/catalog directory.
